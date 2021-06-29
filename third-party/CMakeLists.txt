@@ -150,6 +150,10 @@ if(WIN32)
   # "nvim" branch of https://github.com/neovim/libuv
   set(LIBUV_URL https://github.com/neovim/libuv/archive/b899d12b0d56d217f31222da83f8c398355b69ef.tar.gz)
   set(LIBUV_SHA256 eb7e37b824887e1b31a4e31d1d9bad4c03d8b98532d9cce5f67a3b70495a4b2a)
+elseif(ILLUMOS)
+  # "illumos/cfmakeraw" branch of https://github.com/jclulow/libuv-1
+  set(LIBUV_URL https://github.com/jclulow/libuv-1/archive/76d8b8f2163f52807d2eedecbf6d31275de75634.tar.gz)
+  set(LIBUV_SHA256 fa2c1a5edb1694971b054a5f47a1defe96635602c19655b2d5f038bbdf8ed848)
 else()
   set(LIBUV_URL https://github.com/libuv/libuv/archive/v1.34.2.tar.gz)
   set(LIBUV_SHA256 0d9d38558b45c006c1ea4e8529bae64caf8becda570295ea74e3696362aeb7f2)
