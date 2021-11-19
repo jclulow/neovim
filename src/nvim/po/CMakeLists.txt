@@ -1,5 +1,9 @@
 find_package(Gettext REQUIRED)
+if(ILLUMOS)
+find_program(XGETTEXT_PRG gxgettext)
+else()
 find_program(XGETTEXT_PRG xgettext)
+endif()
 find_program(ICONV_PRG iconv)
 
 option(LANGUAGES "Localizations to build")

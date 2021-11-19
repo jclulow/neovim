@@ -15,6 +15,8 @@
 # include <libutil.h>
 #elif defined(__OpenBSD__) || defined(__NetBSD__) || defined(__APPLE__)
 # include <util.h>
+#elif defined(NVIM_OS_ILLUMOS)
+# include "nvim/os_illumos.h"
 #else
 # include <pty.h>
 #endif

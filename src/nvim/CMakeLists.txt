@@ -144,6 +144,9 @@ foreach(sfile ${NVIM_SOURCES})
   if(NOT WIN32 AND ${f} MATCHES "^(os_win_console.c)$")
     list(APPEND to_remove ${sfile})
   endif()
+  if(NOT ILLUMOS AND ${f} MATCHES "^(os_illumos.c)$")
+    list(APPEND to_remove ${sfile})
+  endif()
 endforeach()
 
 list(REMOVE_ITEM NVIM_SOURCES ${to_remove})
@@ -467,10 +470,10 @@ list(APPEND NVIM_LINK_LIBRARIES
 )
 
 if(UNIX)
-  list(APPEND NVIM_LINK_LIBRARIES
-    m
-    util
-  )
+  list(APPEND NVIM_LINK_LIBRARIES m)
+  if (NOT ILLUMOS)
+    list(APPEND NVIM_LINK_LIBRARIES util)
+  endif()
 endif()
 
 set(NVIM_EXEC_LINK_LIBRARIES ${NVIM_LINK_LIBRARIES} ${LUA_PREFERRED_LIBRARIES})
