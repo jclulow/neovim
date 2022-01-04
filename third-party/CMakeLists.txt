@@ -8,6 +8,8 @@ include(CheckCCompilerFlag)
 # Point CMake at any custom modules we may ship
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" "${PROJECT_SOURCE_DIR}/../cmake")
 
+include(illumos)
+
 # In Windows/MSVC CMAKE_BUILD_TYPE changes the paths/linking of the build
 # recipes (libuv, msgpack), make sure it is set
 if(NOT CMAKE_BUILD_TYPE)

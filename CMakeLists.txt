@@ -79,6 +79,8 @@ endif()
 # used for check_c_compiler_flag
 include(CheckCCompilerFlag)
 
+include(illumos)
+
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
   # CMake tries to treat /sw and /opt/local as extension of the system path, but
   # that doesn't really work out very well.  Once you have a dependency that
